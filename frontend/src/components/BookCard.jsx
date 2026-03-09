@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { FaTrash, FaEdit } from 'react-icons/fa';
 
-const WatchCard = ({ watch, onDelete }) => {
+const BookCard = ({ watch, onDelete }) => {
     return (
         <div className="card bg-base-200/50 backdrop-blur-sm shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-base-300">
             <figure className="h-48 overflow-hidden bg-base-300 flex items-center justify-center p-4">
@@ -44,4 +44,4 @@ const WatchCard = ({ watch, onDelete }) => {
     );
 };
 
-export default WatchCard;
+export default BookCard;

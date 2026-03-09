@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './components/Navbar.jsx';
 import HomePage from './pages/HomePage.jsx';
 import CreatePage from './pages/CreatePage.jsx';
-import WatchDetailPage from './pages/WatchDetailPage.jsx';
+import BookDetailPage from './pages/BookDetailPage.jsx';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/add" element={<CreatePage />} />
-            <Route path="/edit/:id" element={<WatchDetailPage />} />
+            <Route path="/edit/:id" element={<BookDetailPage />} />
           </Routes>
         </div>
         <ToastContainer position="bottom-right" />

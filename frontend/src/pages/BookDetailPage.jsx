@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-const WatchDetailPage = () => {
+const BookDetailPage = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
@@ -134,4 +134,4 @@ const WatchDetailPage = () => {
     );
 };
 
-export default WatchDetailPage;
+export default BookDetailPage;

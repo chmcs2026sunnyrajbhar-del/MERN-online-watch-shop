@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
-import WatchCard from '../components/WatchCard';
+import BookCard from '../components/BookCard';
 
 const HomePage = () => {
     const [watches, setWatches] = useState([]);
@@ -75,6 +75,8 @@ const HomePage = () => {
                         <option value="Analog">Analog</option>
                         <option value="Digital">Digital</option>
                         <option value="Smartwatch">Smartwatch</option>
+                        <option value="Chronograph">Chronograph</option>
+                        <option value="Mechanical">Mechanical</option>
                     </select>
                 </div>
 
@@ -110,7 +112,7 @@ const HomePage = () => {
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {watches.map(watch => (
-                        <WatchCard key={watch._id} watch={watch} onDelete={handleDelete} />
+                        <BookCard key={watch._id} watch={watch} onDelete={handleDelete} />
                     ))}
                 </div>
             )}

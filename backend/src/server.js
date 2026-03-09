@@ -14,14 +14,11 @@ const allowedOrigins = [
   'http://localhost:5173', // Vite default local port
   process.env.FRONTEND_URL // Will be added in Render environment
 ];
-app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+app.use(
+  cors({
+    origin: "https://mern-online-watch-shop-frontend.onrender.com",
+  })
+);
   credentials: true,
 }));
 app.use(express.json());

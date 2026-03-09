@@ -21,7 +21,7 @@ const BookDetailPage = () => {
     useEffect(() => {
         const fetchWatch = async () => {
             try {
-                const { data } = await axios.get(`http://localhost:3000/api/watches/${id}`);
+                const { data } = await axios.get(`api.get("/watches")`);
                 if (data.success) {
                     setFormData({
                         title: data.data.title,

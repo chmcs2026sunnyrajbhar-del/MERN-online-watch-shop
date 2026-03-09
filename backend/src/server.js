@@ -10,36 +10,32 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-const allowedOrigins = [
-  'http://localhost:5173', // Vite default local port
-  process.env.FRONTEND_URL // Will be added in Render environment
-];
 app.use(
   cors({
     origin: "https://mern-online-watch-shop-frontend.onrender.com",
+    credentials: true,
   })
 );
-  credentials: true,
-}));
+
 app.use(express.json());
 
-// Main Root Route
+// Root Route
 app.get('/', (req, res) => {
-    res.send('Online Watch Shop API is running...');
+  res.send('Online Watch Shop API is running...');
 });
 
-// Routes
+// API Routes
 app.use('/api/watches', watchRoutes);
 
 // Database Connection
 connectDB();
 
-// Error Handling Middleware
+// Error Handling
 app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).json({ success: false, message: 'Server error!' });
+  console.error(err.stack);
+  res.status(500).json({ success: false, message: 'Server error!' });
 });
 
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
